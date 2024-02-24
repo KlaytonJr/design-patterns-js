@@ -10,5 +10,5 @@
 [] Prototype Pattern
 [] Provider Pattern
 [] Proxy Pattern
-[] Singleton Pattern
+[X] Singleton Pattern
 [X] Static Import
