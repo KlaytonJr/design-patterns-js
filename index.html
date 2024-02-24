@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List - Design Patterns</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <button id="activity-icon">
+            <i data-feather="activity"></i>
+        </button>
+    </header>
+
+    <section>
+        <h1>To do list</h1>
+        <h4>with design patterns</h4>
+    </section>
+
+    <main>
+        <div id="pills">
+            <button class="pill active">pill</button>
+            <button class="pill">pill 2</button>
+            <button class="pill add" id="add-category-btn">+</button>
+        </div>
+        
+        <div id="form">
+            <input type="text" placeholder="Type your to do...">
+            <button id="add-btn" >Add</button>
+        </div>
+    
+        <div id="list">
+            <div class="item">
+                <div class="content">
+                    <input  type="checkbox" id="check1">
+                    <label for="check1">Buy groceries</label><br>
+                </div>
+                <div class="item-actions">
+                    <span class="edit"><i data-feather="edit"></i></span>
+                    <span class="delete"><i data-feather="trash"></i></span>
+                </div>
+            </div>
+            
+            <div class="item active">
+                <div class="content">
+                    <input  type="checkbox" id="check1">
+                    <label for="check1">Buy groceries</label><br>
+                </div>
+                <div class="item-actions">
+                    <span class="edit"><i data-feather="edit"></i></span>
+                    <span class="delete"><i data-feather="trash"></i></span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>by <span>Klayton Júnior</span></p>
+    </footer>
+
+    <!-- Add category -->
+    <!-- <div class="blur-bg">
+        <div class="category-modal">
+            <h3>Add category</h3>
+            <input type="text" placeholder="Type category name">
+            <div class="category-modal-actions">
+                <button class="cancel-btn">cancel</button>
+                <button class="add-btn">Add</button>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Logs -->
+    <!-- <div class="blur-bg">
+        <div class="log-modal">
+            <h3>Logs</h3>
+            <div class="log-list">
+                <div class="log-item">
+                    <div class="log-item-header">
+                        <p>asdo1231231</p>
+                        <p class="verb add">Add</p>
+                    </div>
+                    <div class="log-item-content">
+                        <p>id: 1234</p>
+                        <p>content: Study HTML</p>
+                        <p>date: 2024-02-24T15:28:38</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <script>
+        feather.replace();
+    </script>
+    <script src="./main.js"></script>
+</body>
+</html>
