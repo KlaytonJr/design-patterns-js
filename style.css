@@ -163,6 +163,10 @@ footer p span {
 }
 
 /* CATEGORY MODAL */
+#category {
+    display: none;
+}
+
 .blur-bg {
     background-color: #9e9e9e3d;
     /* background-color: #00000052; */
@@ -227,6 +231,10 @@ footer p span {
 }
 
 /* LOG MODAL */
+#log {
+    display: none;
+}
+
 .log-modal {
     background-color: #010313;
     position: absolute;
