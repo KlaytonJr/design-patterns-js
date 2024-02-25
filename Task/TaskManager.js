@@ -1,15 +1,15 @@
 import CategoryFactory from "../Category/CategoryFactory.js";
+import Mediator from "../Mediator/Mediator.js";
 import AddTaskCommand from "./Command/AddTaskCommand.js";
 import GetTaskCommand from "./Command/GetTaskCommand.js";
 import TaskFactory from "./TaskFactory.js";
-import TaskMediator from "./TaskMediator.js";
 
 export default class TaskManager {
     categoryFactory = new CategoryFactory();
 
     constructor() {
         if (!TaskManager.instance) {
-            this.mediator = new TaskMediator();
+            this.mediator = new Mediator();
             TaskManager.instance = this;
         }
 
@@ -17,7 +17,7 @@ export default class TaskManager {
     }
 
     getTasks() {
-        const getTaskCommand = new GetTaskCommand();
+        const getTaskCommand = new GetTaskCommand(this);
         this.mediator.addCommand(getTaskCommand);
         this.mediator.executeCommands();
     }
@@ -29,9 +29,5 @@ export default class TaskManager {
         const addTaskCommand = new AddTaskCommand(task);
         this.mediator.addCommand(addTaskCommand);
         this.mediator.executeCommands();
-    }
-
-    addCategory(name) {
-        categoryFactory.setCategory(name);
     }
 }

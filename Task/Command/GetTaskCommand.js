@@ -5,11 +5,16 @@ export default class GetTaskCommand {
     taskProvider = new Provider("tasks");
     taskObserver = new TaskObserver();
 
-    constructor(task) {
-        this.task = task;
+    constructor(taskManager) {
+        this.taskManager = taskManager;
     }
 
     execute() { 
+        const addTaskBtn = document.getElementById("add-btn");
+        const addTaskInput = document.getElementById("add-input");
+
+        addTaskBtn.addEventListener("click", () => this.taskManager.addTask(addTaskInput.value));
+
         this.taskObserver.update();
     }
 }

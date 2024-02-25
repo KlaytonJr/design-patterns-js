@@ -1,4 +1,4 @@
-export default class TaskMediator {
+export default class Mediator {
     constructor() {
         this.commands = [];
     }
