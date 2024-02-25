@@ -1,11 +1,11 @@
-import { Category } from "./Category";
+import { Category } from "./Category.js";
 
 export default class CategoryFactory {
     constructor() {
       this.categories = {};
     }
   
-    getCategory(name) {
+    setCategory(name) {
       const key = name.toLowerCase();
       
       if (!this.categories[key]) {
