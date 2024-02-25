@@ -32,6 +32,7 @@ export default class Provider {
             this.set(JSON.stringify(existing));
 
             this.name === "tasks" && this.log({
+                id: updatedItem.id,
                 old: { ...oldItem },
                 new: { ...updatedItem }
             }, "Update");
@@ -42,12 +43,15 @@ export default class Provider {
         const existing = this.get();
         const updatedList = existing.filter(item => item.id !== itemId);
         this.set(JSON.stringify(updatedList));
-        this.name === "tasks" && this.log(itemId, "Remove");
+        this.name === "tasks" && this.log({ id: itemId }, "Remove");
     }
 
     logItem(item, verb) {
-        const history = JSON.parse(localStorage.getItem('logs')) || [];
-        history.unshift({ id: generateId(), item, date: new Date(), verb });
-        localStorage.setItem('logs', JSON.stringify(history));
+        return new Promise((resolve) => {
+            const history = JSON.parse(localStorage.getItem('logs')) || [];
+            history.unshift({ id: generateId(), item, date: new Date(), verb });
+            localStorage.setItem('logs', JSON.stringify(history));
+            resolve("finish");
+        })
     }
 }

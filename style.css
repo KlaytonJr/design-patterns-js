@@ -235,6 +235,15 @@ footer p span {
     display: none;
 }
 
+.log-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.log-header svg {
+    cursor: pointer;
+}
+
 .log-modal {
     background-color: #010313;
     position: absolute;
