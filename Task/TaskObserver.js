@@ -48,7 +48,7 @@ export default class TaskObserver {
         const deleteBtn = item.querySelector('span.delete');
 
         deleteBtn.addEventListener('click', () => {
-            this.taskProvider.deleteItem(task.id);
+            this.taskProvider.deleteItem(task.id, () => this.update());
             this.update();
         });
 

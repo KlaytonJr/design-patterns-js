@@ -20,6 +20,11 @@ export default class Provider {
         existing.push(newItem);
         this.set(JSON.stringify(existing));
         this.name === "tasks" && this.log(newItem, "Add");
+
+        // new Toast({
+        //     message: 'Sucessfull add',
+        //     type: 'success',
+        // });
     }
 
     updateItem(updatedItem) {
@@ -37,13 +42,32 @@ export default class Provider {
                 new: { ...updatedItem }
             }, "Update");
         }
+
+        // new Toast({
+        //     message: 'This is an example with custom buttons',
+        //     type: 'warning',
+        // });
     }
 
-    deleteItem(itemId) {
+    deleteItem(itemId, callback = () => {}) {
         const existing = this.get();
         const updatedList = existing.filter(item => item.id !== itemId);
         this.set(JSON.stringify(updatedList));
         this.name === "tasks" && this.log({ id: itemId }, "Remove");
+        new Toast({
+            message: "Are you sure you want to delete the task?",
+            type: 'danger',
+            customButtons: [
+              {
+                text: 'undo',
+                onClick: () => {
+                    this.set(JSON.stringify(existing));
+                    this.name === "tasks" && this.log({ id: itemId }, "Undo");
+                    callback();
+                }
+              }
+            ]
+        });
     }
 
     logItem(item, verb) {

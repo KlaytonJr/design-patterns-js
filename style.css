@@ -287,10 +287,12 @@ footer p span {
 .log-modal .log-item .log-item-header .verb.remove {
     color: #DA0202;
 }
-.log-modal .log-item .log-item-header .verb.info {
+.log-modal .log-item .log-item-header .verb.info,
+.log-modal .log-item .log-item-header .verb.undo,
+.log-modal .log-item .log-item-header .verb.do {
     color: #0090CD;
 }
-.log-modal .log-item .log-item-header .verb.edit {
+.log-modal .log-item .log-item-header .verb.update {
     color: #E9C921;
 }
 
