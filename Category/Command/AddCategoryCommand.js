@@ -10,8 +10,6 @@ export default class AddCategoryCommand {
     }
 
     execute() { 
-        console.log("execute categoryCommand")
-        console.log(this.category);
         // set all active to false
         const categories = this.categoryProvider.get();
         categories.forEach((categoryItem) => this.categoryProvider.updateItem({ ...categoryItem, active: false }));

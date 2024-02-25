@@ -7,7 +7,6 @@ export default class TaskObserver {
 
     update() {
         // Update the UI or perform other actions when tasks change.
-        console.log('Tasks updated!');
         const tasks = this.taskProvider.get();
 
         const categories = this.categoryProvider.get();
@@ -22,7 +21,6 @@ export default class TaskObserver {
     }
 
     updateItem(task) {
-        console.log("update item")
         const item = document.createElement('div');
         item.classList.add('item');
 
@@ -43,7 +41,6 @@ export default class TaskObserver {
         const checkbox = item.querySelector('input[type="checkbox"]');
 
         checkbox.addEventListener('click', () => {
-            console.log("click checkbox")
             this.taskProvider.updateItem({ ...task, completed: checkbox.checked});
             this.update();
         });
@@ -51,7 +48,6 @@ export default class TaskObserver {
         const deleteBtn = item.querySelector('span.delete');
 
         deleteBtn.addEventListener('click', () => {
-            console.log("click deleteBtn");
             this.taskProvider.deleteItem(task.id);
             this.update();
         });

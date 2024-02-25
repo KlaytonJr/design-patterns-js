@@ -9,7 +9,6 @@ export default class CategoryObserver {
 
     update() {
         // Update the UI or perform other actions when category change.
-        console.log('Category updated!');
         const categories = this.categoryProvider.get();
 
         this.pills.innerHTML = ``;

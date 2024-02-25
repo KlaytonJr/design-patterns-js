@@ -10,8 +10,6 @@ export default class AddTaskCommand {
     }
 
     execute() { 
-        console.log("execute TaskCommand")
-        console.log(this.task);
         this.taskProvider.addItem(this.task);
 
         this.taskObserver.update();
