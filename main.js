@@ -8,3 +8,11 @@ categoryManager.getCategories();
 // Task
 const taskManager = new TaskManager();
 taskManager.getTasks();
+
+const addTaskBtn = document.getElementById("add-btn");
+const addTaskInput = document.getElementById("add-input");
+
+addTaskBtn.addEventListener("click", () => {
+    taskManager.addTask(addTaskInput.value);
+    addTaskInput.value = "";
+});

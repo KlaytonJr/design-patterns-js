@@ -2,6 +2,7 @@ import Provider from "../Provider/Provider.js";
 
 export default class TaskObserver {
     taskProvider = new Provider("tasks");
+    categoryProvider = new Provider("categories");
     list = document.getElementById("list");
 
     update() {
@@ -9,9 +10,12 @@ export default class TaskObserver {
         console.log('Tasks updated!');
         const tasks = this.taskProvider.get();
 
+        const categories = this.categoryProvider.get();
+        const categoryActive = categories.find((category) => category.active === true);
+
         list.innerHTML = ``;
         tasks.forEach(task => {
-            this.updateItem(task);
+            task.category === categoryActive.name && this.updateItem(task);
         });
 
         feather.replace();

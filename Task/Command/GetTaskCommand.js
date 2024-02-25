@@ -10,11 +10,6 @@ export default class GetTaskCommand {
     }
 
     execute() { 
-        const addTaskBtn = document.getElementById("add-btn");
-        const addTaskInput = document.getElementById("add-input");
-
-        addTaskBtn.addEventListener("click", () => this.taskManager.addTask(addTaskInput.value));
-
         this.taskObserver.update();
     }
 }
