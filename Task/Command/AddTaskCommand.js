@@ -1,7 +1,7 @@
-import Provider from "../Provider/Provider.js";
-import TaskObserver from "./TaskObserver.js";
+import Provider from "../../Provider/Provider.js";
+import TaskObserver from "../TaskObserver.js";
 
-export default class TaskCommand {
+export default class AddTaskCommand {
     taskProvider = new Provider("tasks");
     taskObserver = new TaskObserver();
 

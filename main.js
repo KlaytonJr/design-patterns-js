@@ -5,4 +5,6 @@ const addTaskInput = document.getElementById("add-input");
 
 const taskManager = new TaskManager();
 
+taskManager.getTasks();
+
 addTaskBtn.addEventListener("click", () => taskManager.addTask(addTaskInput.value))
