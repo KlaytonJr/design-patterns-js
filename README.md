@@ -63,4 +63,4 @@ Let's connect! Reach out on [LinkedIn](https://www.linkedin.com/in/klayton-jr/) 
 
 ![Project Image](https://github.com/KlaytonJr/design-patterns-js/blob/main/assets/project.png?raw=true)
 
-![Project Architecture](https://github.com/KlaytonJr/design-patterns-js/blob/main/assets/Architecutre.png?raw=true)
+![Project Architecture](https://github.com/KlaytonJr/design-patterns-js/blob/main/assets/Architecture.png?raw=true)
