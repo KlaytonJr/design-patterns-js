@@ -18,7 +18,7 @@
 
 .toastjs {
 	background: #fff;
-	padding: 10px 15px 0; /* No bottom padding because the buttons have a margin-bottom */
+	padding: 10px 15px; /* No bottom padding because the buttons have a margin-bottom */
 	border-left-style: solid;
 	border-left-width: 5px;
 	border-radius: 4px;
@@ -55,7 +55,7 @@
 
 	display: inline-block;
 	margin-right: 10px;
-	margin-bottom: 10px;
+	margin-bottom: 0px;
 	cursor: pointer;
 }
 

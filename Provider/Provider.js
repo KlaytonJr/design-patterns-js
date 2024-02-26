@@ -21,10 +21,11 @@ export default class Provider {
         this.set(JSON.stringify(existing));
         this.name === "tasks" && this.log(newItem, "Add");
 
-        // new Toast({
-        //     message: 'Sucessfull add',
-        //     type: 'success',
-        // });
+        new Toast({
+            message: 'Added successfully',
+            type: 'success',
+            timeout: 5000
+        });
     }
 
     updateItem(updatedItem) {
@@ -43,10 +44,11 @@ export default class Provider {
             }, "Update");
         }
 
-        // new Toast({
-        //     message: 'This is an example with custom buttons',
-        //     type: 'warning',
-        // });
+        new Toast({
+            message: 'Updated successfully',
+            type: 'warning',
+            timeout: 5000
+        });
     }
 
     deleteItem(itemId, callback = () => {}) {
@@ -66,7 +68,8 @@ export default class Provider {
                     callback();
                 }
               }
-            ]
+            ],
+            timeout: 5000
         });
     }
 
